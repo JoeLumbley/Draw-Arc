@@ -285,9 +285,9 @@ Public Class Form1
 
         Dim FontSize As Single
 
-        If ClientSize.Height / 35 > 13 Then
+        If ClientSize.Height / 25 > 13 Then
 
-            FontSize = ClientSize.Height / 35
+            FontSize = ClientSize.Height / 25
 
         Else
 
