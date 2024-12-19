@@ -130,7 +130,7 @@ Public Class Form1
 
     Private Sub UpdateCodeDisplay()
 
-        CodeDisplay.Text = $".DrawArc(Pen, Rectangle, {StartAngleTrackBar.Value}, {SweepAngleTrackBar.Value})"
+        CodeDisplay.Text = $"Graphics.DrawArc(Pen, Rectangle, {StartAngleTrackBar.Value}, {SweepAngleTrackBar.Value})"
 
     End Sub
 
