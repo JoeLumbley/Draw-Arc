@@ -89,7 +89,7 @@ Public Class Form1
 
             UpdateCodeDisplay()
 
-            Refresh() ' Calls OnPaint Sub
+            Invalidate() ' Calls OnPaint Sub
 
         End If
 
@@ -121,7 +121,7 @@ Public Class Form1
 
     Private Sub UpdateCodeDisplay()
 
-        CodeDisplay.Text = $".DrawArc(Pen, Rect, {StartAngleTrackBar.Value}, {SweepAngleTrackBar.Value})"
+        CodeDisplay.Text = $".DrawArc(Pen, Rectangle, {StartAngleTrackBar.Value}, {SweepAngleTrackBar.Value})"
 
     End Sub
 
@@ -216,11 +216,9 @@ Public Class Form1
 
         CenterToScreen()
 
+        SetStyle(ControlStyles.OptimizedDoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
+
         SetStyle(ControlStyles.UserPaint, True)
-
-        SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
-
-        SetStyle(ControlStyles.AllPaintingInWmPaint, True)
 
         Text = "Draw Arc - Code with Joe"
 
@@ -252,7 +250,7 @@ Public Class Form1
 
     Private Sub InitializeTimer()
 
-        Timer1.Interval = 15
+        Timer1.Interval = 30
 
         Timer1.Enabled = True
 
