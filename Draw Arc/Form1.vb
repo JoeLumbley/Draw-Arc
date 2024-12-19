@@ -36,14 +36,6 @@ Public Class Form1
         Public Font As Font
     End Structure
 
-    Private Structure ButtonStruct
-        Public Rect As Rectangle
-        Public Radius As Integer
-        Public Text As String
-        Public TextLocation As Point
-        Public Font As Font
-    End Structure
-
     Private CodeDisplay As DisplayObject
 
     Private CircleOfProgress As Rectangle
@@ -302,24 +294,11 @@ Public Class Form1
 
     Private Sub ResizeControls()
 
-        Dim FontSize As Single
-
-        If ClientSize.Height / 45 > 10 Then
-
-            FontSize = ClientSize.Height / 45
-
-        Else
-
-            FontSize = 10
-
-        End If
-
         Dim TrackBarWidth As Integer
 
         If ClientSize.Height / 2 > 225 Then
 
             TrackBarWidth = ClientSize.Height / 2
-
 
         Else
 
@@ -399,7 +378,6 @@ Public Class Form1
         CircleOfProgress.Y = ClientSize.Height / 2 - CircleOfProgress.Height / 2
 
     End Sub
-
 
 End Class
 
