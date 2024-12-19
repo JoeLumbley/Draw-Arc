@@ -42,15 +42,16 @@ Imports System.Drawing.Drawing2D
 Public Class Form1
 
     Private Context As BufferedGraphicsContext
+
     Private Buffer As BufferedGraphics
 
-    Private Structure DisplayObject
+    Private Structure DisplayStructure
         Public Location As Point
         Public Text As String
         Public Font As Font
     End Structure
 
-    Private CodeDisplay As DisplayObject
+    Private CodeDisplay As DisplayStructure
 
     Private CircleOfProgress As Rectangle
 
@@ -63,8 +64,8 @@ Public Class Form1
 
     Private sweepAngle As Single
 
-    Private ReadOnly AlineCenterMiddle As New StringFormat With
-        {.Alignment = StringAlignment.Center,
+    Private ReadOnly AlineCenterMiddle As New StringFormat With {
+        .Alignment = StringAlignment.Center,
         .LineAlignment = StringAlignment.Center}
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
