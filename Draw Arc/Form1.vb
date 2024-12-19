@@ -1,5 +1,19 @@
 ﻿' Draw Arc
 
+' This interactive application provides a visual demonstration of arcs drawn
+' with various starting and sweep angles using GDI (Graphics Device Interface)
+' graphics.
+
+' It aims to help users gain a deeper understanding of how angles affect the
+' rendering of arcs in graphical applications.
+
+' Features
+'  Interactive Visualization: Adjust starting and sweep angles dynamically to
+'  see real-time changes in arc rendering.
+'  Intuitive Controls: User-friendly interface for manipulating angles.
+'  Educational Tool: Designed to help users grasp the concepts of angles in
+'  graphics programming.
+
 ' MIT License
 ' Copyright(c) 2024 Joseph W. Lumbley
 
@@ -49,7 +63,9 @@ Public Class Form1
 
     Private sweepAngle As Single
 
-    Private ReadOnly AlineCenterMiddle As New StringFormat With {.Alignment = StringAlignment.Center, .LineAlignment = StringAlignment.Center}
+    Private ReadOnly AlineCenterMiddle As New StringFormat With
+        {.Alignment = StringAlignment.Center,
+        .LineAlignment = StringAlignment.Center}
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -156,11 +172,19 @@ Public Class Form1
 
                     .Clear(SystemColors.Control)
 
-                    .DrawEllipse(CircleOfProgressBackgroundPen, CircleOfProgress)
+                    .DrawEllipse(CircleOfProgressBackgroundPen,
+                                 CircleOfProgress)
 
-                    .DrawArc(CircleOfProgressPen, CircleOfProgress, StartAngleTrackBar.Value, SweepAngleTrackBar.Value)
+                    .DrawArc(CircleOfProgressPen,
+                             CircleOfProgress,
+                             StartAngleTrackBar.Value,
+                             SweepAngleTrackBar.Value)
 
-                    .DrawString(CodeDisplay.Text, CodeDisplay.Font, New SolidBrush(SystemColors.ControlText), CodeDisplay.Location, AlineCenterMiddle)
+                    .DrawString(CodeDisplay.Text,
+                                CodeDisplay.Font,
+                                New SolidBrush(SystemColors.ControlText),
+                                CodeDisplay.Location,
+                                AlineCenterMiddle)
 
                 End With
 
@@ -342,7 +366,8 @@ Public Class Form1
 
         End If
 
-        CircleOfProgressBackgroundPen = New Pen(SystemColors.ControlLightLight, PenSize)
+        CircleOfProgressBackgroundPen = New Pen(SystemColors.ControlLightLight,
+                                                PenSize)
 
         If ClientSize.Height / 40 > 10 Then
 
