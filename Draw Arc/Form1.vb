@@ -61,31 +61,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        InitializeForm()
-
-        InitializeBuffer()
-
-        InitializeLabels()
-
-        InitializeTimer()
+        InitializeApp()
 
         Debug.Print($"Program running... {Now.ToShortTimeString}")
-
-    End Sub
-
-    Private Sub InitializeTimer()
-
-        Timer1.Interval = 15
-
-        Timer1.Enabled = True
-
-    End Sub
-
-    Private Sub InitializeLabels()
-
-        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
-
-        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
 
     End Sub
 
@@ -107,9 +85,9 @@ Public Class Form1
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        UpdateCodeDisplay()
-
         If Not WindowState = FormWindowState.Minimized Then
+
+            UpdateCodeDisplay()
 
             Refresh() ' Calls OnPaint Sub
 
@@ -141,6 +119,11 @@ Public Class Form1
 
     End Sub
 
+    Private Sub UpdateCodeDisplay()
+
+        CodeDisplay.Text = $".DrawArc(Pen, Rect, {StartAngleTrackBar.Value}, {SweepAngleTrackBar.Value})"
+
+    End Sub
 
     Protected Overrides Sub OnPaintBackground(ByVal e As PaintEventArgs)
 
@@ -166,20 +149,6 @@ Public Class Form1
                 .TextContrast = SmoothingMode.HighQuality
 
             End With
-
-        End If
-
-    End Sub
-
-    Private Sub DisposeBuffer()
-
-        If Buffer IsNot Nothing Then
-
-            Buffer.Dispose()
-
-            Buffer = Nothing ' Set to Nothing to avoid using a disposed object
-
-            ' The buffer will be reallocated in OnPaint
 
         End If
 
@@ -217,9 +186,29 @@ Public Class Form1
 
     End Sub
 
-    Private Sub UpdateCodeDisplay()
+    Private Sub DisposeBuffer()
 
-        CodeDisplay.Text = $".DrawArc(Pen, Rect, {StartAngleTrackBar.Value}, {SweepAngleTrackBar.Value})"
+        If Buffer IsNot Nothing Then
+
+            Buffer.Dispose()
+
+            Buffer = Nothing ' Set to Nothing to avoid using a disposed object
+
+            ' The buffer will be reallocated in OnPaint
+
+        End If
+
+    End Sub
+
+    Private Sub InitializeApp()
+
+        InitializeForm()
+
+        InitializeBuffer()
+
+        InitializeLabels()
+
+        InitializeTimer()
 
     End Sub
 
@@ -261,6 +250,22 @@ Public Class Form1
 
     End Sub
 
+    Private Sub InitializeTimer()
+
+        Timer1.Interval = 15
+
+        Timer1.Enabled = True
+
+    End Sub
+
+    Private Sub InitializeLabels()
+
+        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
+
+        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
+
+    End Sub
+
     Private Sub ResizeCodeDisplay()
 
         Dim FontSize As Single
@@ -275,25 +280,25 @@ Public Class Form1
 
         End If
 
-        Dim ButtonSize As Integer
+        Dim YPosition As Integer
 
-        If ClientSize.Height / 14 > 32 Then
+        If ClientSize.Height / 2.5 > 175 Then
 
-            ButtonSize = ClientSize.Height / 14
+            YPosition = ClientSize.Height / 2.5
 
         Else
 
-            ButtonSize = 32
+            YPosition = 175
 
         End If
 
         CodeDisplay.Font = New Font("Segoe UI",
-                                       FontSize,
-                                       FontStyle.Regular)
+                                    FontSize,
+                                    FontStyle.Regular)
 
         CodeDisplay.Location.X = ClientSize.Width / 2
 
-        CodeDisplay.Location.Y = ClientSize.Height / 2 - ButtonSize * 6
+        CodeDisplay.Location.Y = ClientSize.Height / 2 - YPosition
 
     End Sub
 
