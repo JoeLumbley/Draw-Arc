@@ -4,10 +4,10 @@ This interactive application provides a visual demonstration of arcs drawn with 
 
 It aims to help users gain a deeper understanding of how angles affect the rendering of arcs in graphical applications.
 
-![001](https://github.com/user-attachments/assets/0c69fc39-dfbe-4936-969a-971448dda477)
 
 
 
+![002](https://github.com/user-attachments/assets/555e2eed-0a02-49ea-a2ee-adc0b0604b8b)
 
 
 
