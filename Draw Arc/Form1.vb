@@ -270,13 +270,13 @@ Public Class Form1
 
         Dim FontSize As Single
 
-        If ClientSize.Height / 35 > 10 Then
+        If ClientSize.Height / 35 > 13 Then
 
             FontSize = ClientSize.Height / 35
 
         Else
 
-            FontSize = 10
+            FontSize = 13
 
         End If
 
@@ -316,19 +316,20 @@ Public Class Form1
 
         End If
 
-        Dim ButtonSize As Integer
+        Dim TrackBarWidth As Integer
 
-        If ClientSize.Height / 14 > 32 Then
+        If ClientSize.Height / 2 > 225 Then
 
-            ButtonSize = ClientSize.Height / 14
+            TrackBarWidth = ClientSize.Height / 2
+
 
         Else
 
-            ButtonSize = 32
+            TrackBarWidth = 225
 
         End If
 
-        StartAngleTrackBar.Width = ClientSize.Width / 4.1
+        StartAngleTrackBar.Width = TrackBarWidth
 
         StartAngleTrackBar.Left = ClientSize.Width / 2 - StartAngleTrackBar.Width / 2
 
@@ -338,7 +339,7 @@ Public Class Form1
 
         StartAngleLabel.Top = StartAngleTrackBar.Top + 40
 
-        SweepAngleTrackBar.Width = ClientSize.Width / 4.1
+        SweepAngleTrackBar.Width = TrackBarWidth
 
         SweepAngleTrackBar.Left = ClientSize.Width / 2 - SweepAngleTrackBar.Width / 2
 
