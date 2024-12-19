@@ -65,15 +65,15 @@ Public Class Form1
 
         InitializeBuffer()
 
+        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
+
+        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
+
         Timer1.Interval = 15
 
         Timer1.Enabled = True
 
         Debug.Print($"Program running... {Now.ToShortTimeString}")
-
-        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
-
-        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
 
     End Sub
 
@@ -116,6 +116,19 @@ Public Class Form1
         MyBase.OnPaint(e)
 
     End Sub
+
+    Private Sub StartAngleTrackBar_Scroll(sender As Object, e As EventArgs) Handles StartAngleTrackBar.Scroll
+
+        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
+
+    End Sub
+
+    Private Sub SweepAngleTrackBar_Scroll(sender As Object, e As EventArgs) Handles SweepAngleTrackBar.Scroll
+
+        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
+
+    End Sub
+
 
     Protected Overrides Sub OnPaintBackground(ByVal e As PaintEventArgs)
 
@@ -371,17 +384,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub StartAngleTrackBar_Scroll(sender As Object, e As EventArgs) Handles StartAngleTrackBar.Scroll
-
-        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
-
-    End Sub
-
-    Private Sub SweepAngleTrackBar_Scroll(sender As Object, e As EventArgs) Handles SweepAngleTrackBar.Scroll
-
-        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
-
-    End Sub
 
 End Class
 
