@@ -23,7 +23,6 @@
 
 ' https://github.com/JoeLumbley/Draw-Arc
 
-
 Imports System.Drawing.Drawing2D
 
 Public Class Form1
