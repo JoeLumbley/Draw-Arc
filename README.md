@@ -7,7 +7,7 @@ It aims to help users gain a deeper understanding of how angles affect the rende
 
 
 
-![002](https://github.com/user-attachments/assets/555e2eed-0a02-49ea-a2ee-adc0b0604b8b)
+![003](https://github.com/user-attachments/assets/bde01867-02e5-4cb1-af6d-0ab1265832dd)
 
 
 
