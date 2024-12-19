@@ -59,8 +59,6 @@ Public Class Form1
 
     Private ReadOnly AlineCenterMiddle As New StringFormat With {.Alignment = StringAlignment.Center, .LineAlignment = StringAlignment.Center}
 
-    'Private ReadOnly EmojiFont As New Font("Segoe UI Emoji", 25)
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         InitializeForm()
