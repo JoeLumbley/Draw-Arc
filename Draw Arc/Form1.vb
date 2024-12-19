@@ -65,15 +65,27 @@ Public Class Form1
 
         InitializeBuffer()
 
-        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
+        InitializeLabels()
 
-        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
+        InitializeTimer()
+
+        Debug.Print($"Program running... {Now.ToShortTimeString}")
+
+    End Sub
+
+    Private Sub InitializeTimer()
 
         Timer1.Interval = 15
 
         Timer1.Enabled = True
 
-        Debug.Print($"Program running... {Now.ToShortTimeString}")
+    End Sub
+
+    Private Sub InitializeLabels()
+
+        StartAngleLabel.Text = $"Start Angle: {StartAngleTrackBar.Value}°"
+
+        SweepAngleLabel.Text = $"Sweep Angle: {SweepAngleTrackBar.Value}°"
 
     End Sub
 
