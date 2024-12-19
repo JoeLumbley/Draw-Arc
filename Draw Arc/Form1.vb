@@ -21,13 +21,10 @@
 ' OUT OF Or IN CONNECTION WITH THE SOFTWARE Or THE USE Or OTHER DEALINGS IN THE
 ' SOFTWARE.
 
-' https://github.com/JoeLumbley/Timer
+' https://github.com/JoeLumbley/Draw-Arc
 
-Imports System.ComponentModel
+
 Imports System.Drawing.Drawing2D
-'Imports System.IO
-Imports System.Runtime.InteropServices
-Imports System.Text
 
 Public Class Form1
 
@@ -63,7 +60,7 @@ Public Class Form1
 
     Private ReadOnly AlineCenterMiddle As New StringFormat With {.Alignment = StringAlignment.Center, .LineAlignment = StringAlignment.Center}
 
-    Private ReadOnly EmojiFont As New Font("Segoe UI Emoji", 25)
+    'Private ReadOnly EmojiFont As New Font("Segoe UI Emoji", 25)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
