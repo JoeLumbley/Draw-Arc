@@ -20,3 +20,11 @@ It aims to help users gain a deeper understanding of how angles affect the rende
 - **Interactive Visualization**: Adjust starting and sweep angles dynamically to see real-time changes in arc rendering.
 - **Intuitive Controls**: User-friendly interface for manipulating angles.
 - **Educational Tool**: Designed to help users grasp the concepts of angles in graphics programming.
+
+
+
+
+
+
+![AnglesDiagram](https://github.com/user-attachments/assets/9964ef31-4ba1-459d-9e5c-5f53d95393f4)
+
